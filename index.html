@@ -34,15 +34,15 @@
 				</div>
 				
 				<div class="">
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#form" onclick="AddTask()"><i class=""></i> Add Task</a>
+					<button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#form" onclick="AddTask()"><i class="fa fa-plus"></i> Add Task</a>
 				</div>
 			</div>
 			
 			<div class="row">
-				<div class="col ">
+				<div class="col">
 					<div class="">
-						<div class="bg-dark p-1 ">
-							<h4 class="text-white px-3 fs-6">To do (<span id="to-do-tasks-count">0</span>)</h4>
+						<div class="bg-red-700 p-1 ">
+							<h4 class="text-white px-3 fs-5 p-2">To do (<span id="to-do-tasks-count">0</span>)</h4>
 
 						</div>
 						<div class=" " id="to-do-tasks">
@@ -54,8 +54,8 @@
 				</div>
 				<div class="col">
 					<div class="">
-						<div class="bg-dark p-1">
-							<h4 class="text-white px-3 fs-6">In Progress (<span id="in-progress-tasks-count">0</span>)</h4>
+						<div class="bg-warning-600 p-1">
+							<h4 class="text-white px-3 fs-5 p-2">In Progress (<span id="in-progress-tasks-count">0</span>)</h4>
 
 						</div>
 						<div class="" id="in-progress-tasks">
@@ -65,8 +65,8 @@
 				</div>
 				<div class="col">
 					<div class="">
-						<div class="bg-dark p-1">
-							<h4 class="text-white px-3 fs-6">Done (<span id="done-tasks-count">0</span>)</h4>
+						<div class="bg-green-500 p-1">
+							<h4 class="text-white px-3 fs-5 p-2">Done (<span id="done-tasks-count">0</span>)</h4>
 
 						</div>
 						<div class=" " id="done-tasks">
@@ -145,7 +145,7 @@
         </div>
         <div class="modal-footer" id="id-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button id="save" type="submit" class="btn btn-primary">Save changes</button>
+          <button id="save" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
           <!-- <button id="update"  type="button" class="btn btn-warning">Update</button>
           <button id="delete" type="button" class="btn btn-danger">Delete</button> -->
         </div>

@@ -1,7 +1,7 @@
 /**
  * In this file app.js you will find all CRUD functions name.
  * 
- */
+ */     var form = document.getElementById("form");
         var titleInput=document.getElementById("title");
         var PriorityInput=document.getElementById("Priority");
         var dateInput=document.getElementById("date");
@@ -9,7 +9,7 @@
         var StatusInput=document.getElementById("Status");
         var featureInput=document.getElementById("feature");
         var bugInput=document.getElementById("bug");
-        var form = document.getElementById("form");
+        
 
 
 
@@ -23,7 +23,6 @@ function saveTask(stopLoading) {
         var description=descriptionInput.value;
         var Status=StatusInput.value;
         var feature=featureInput.value;
-        // var bug=document.getElementById("bug");
         
 
         let type1;
@@ -44,16 +43,12 @@ function saveTask(stopLoading) {
             description:description,
         }
         tasks.push(task);
-    // Ouvrir modal form
+    
     
     reloadTasks() 
 }
 
 
-
-function editTask(index) {
-
-}
 
 function updateTask(index) {
     // GET TASK ATTRIBUTES FROM INPUTS
@@ -93,7 +88,7 @@ function updateTask(index) {
 
 function deleteTask(index) {
     tasks.splice(index,1);
-    console.log(index);
+
     reloadTasks();
 }
 
@@ -131,17 +126,17 @@ for(var i=0;i<tasks.length;i++){
         task= done;
         document.getElementById('done-tasks-count').innerHTML++;
     }
-    task.innerHTML+=`<button class="w-100 border py-2 d-flex" data-bs-toggle="modal" data-bs-target="#form" onclick="btnTasks(${i})">
+    task.innerHTML+=`<button class="w-100 border py-4 d-flex" data-bs-toggle="modal" data-bs-target="#form" onclick="btnTasks(${i})">
     <div class="px-4">
-        <i ${tasks[i].status=='To Do'? 'class="fa-solid fa-question text-success fs-3"':tasks[i].status=='In Progress'?' class="fa-solid fa-spinner text-success fs-3"' :' class="fa-solid fa-check text-success fs-3"'} ></i> 
+        <i ${tasks[i].status=='To Do'? 'class="fa-solid fa-question text-red-700 fs-3"':tasks[i].status=='In Progress'?' class="fa-solid fa-circle-notch text-warning-600 fs-3 fa-spin"' :' class="fa-solid fa-check text-green-500 fs-3"'} ></i> 
     </div>
-    <div class="">
+    <div class="lh-9">
         <div class="text-start fw-bold">${tasks[i].title}</div>
         <div class="">
             <div class="text-start">#${i+1} created in ${tasks[i].date}</div>
-            <div class="text-start fs-6" title="${tasks[i].description}">${tasks[i].description}</div>
+            <div class="text-start fs-6" title="${tasks[i].description}">${tasks[i].description.slice(0,150)}</div>
         </div>
-        <div class="text-start ">
+        <div class="text-start mt-4">
             <span class="p-1 mb-6 bg-primary text-white rounded">${tasks[i].priority}</span>
             <span class="p-1 mb-6 bg-secondary text-white rounded">${tasks[i].type}</span>
         </div>
@@ -170,33 +165,10 @@ function btnTasks(index){
         bugInput.checked = true;
     }
 
-    // form.title1.value=tasks[index].title;
-    
-    // reloadTasks(index);
-    
-    // let deleteBtn = document.getElementById('delete')
-    // let updateBtn = document.getElementById('update')
-
-    // document.getElementById('save').style.display = 'none';
-    // updateBtn.style.display = 'block';
-    // deleteBtn.style.display = 'block';
-
-    // deleteBtn.addEventListener("click", function (index){
-    //     deleteTask(index)
-        
-    // })
-    // updateBtn.addEventListener("click", function (){
-    //     updateTask(index)
-    // })
-    // document.getElementById('id-footer').innerHTML='';
     document.getElementById('id-footer').innerHTML=`
     <button id="update"  type="button" class="btn btn-warning" data-bs-dismiss="modal" onclick="updateTask(${index})" >Update</button>
     <button id="delete" type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="deleteTask(${index})">Delete</button>`;
 
-   
 
-
-
-    //  console.log(index);
     
 }
